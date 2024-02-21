@@ -110,9 +110,13 @@ function Header() {
     <header>
       <nav className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
-            <span>E-Learning</span>
-          </Link>
+        <Link className="navbar-brand text-primary" to="/">
+          Eklavya
+        </Link>
+          
+          
+
+
 
           <button
             className="navbar-toggler"

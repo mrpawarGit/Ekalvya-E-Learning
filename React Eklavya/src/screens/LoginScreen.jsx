@@ -95,13 +95,7 @@ const [errmsg,setErrmsg]=useState()
     if (roleName !== "") {
       // roleName === "Admin" ? navigate("/admin") : navigate("/instructor");
 
-      roleName === "Admin"
-        ? navigate("/admin")
-        : roleName === "Instructor"
-        ? navigate("/instructor")
-        : roleName === "Student"
-        ? navigate("/student")
-        : navigate("/login");
+      roleName === "Admin"? navigate("/admin"): roleName === "Instructor"? navigate("/instructor"): roleName === "Student"? navigate("/student"): navigate("/login");
     }
   }, [roleName]);
 
@@ -114,13 +108,14 @@ const [errmsg,setErrmsg]=useState()
   };
 
   return (
+    
     <Container className="my-5">
       <br />
       <Row className="py-5">
         <Col sm={{ size: 6, offset: 3 }}>
           <Card color="dark" outline>
             <CardHeader className="text-center">
-              <h3><b>Login</b></h3>
+              <h3>Login</h3>
             </CardHeader>
             <CardBody>
               <Form onSubmit={submitHandler}>
@@ -151,8 +146,7 @@ const [errmsg,setErrmsg]=useState()
                 </FormGroup>
 
                 <Container className="text-center">
-                <Button type="submit" className="btn btn-success">
-
+                  <Button type="submit" color="success">
                     Login
                   </Button>
                   {errmsg && <p className="alert alert-danger mt-4 text-center font-weight-bold">{errmsg}</p>}
