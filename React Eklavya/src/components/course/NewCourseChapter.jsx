@@ -213,10 +213,16 @@ function NewCourseChapter() {
                 </FormGroup> */}
 
                 <Container className="text-center">
+                <Link to={"/instruct/tutorial/subtopic"}>
                   <Button type="submit" color="success">
                     Submit
                   </Button>
+                  </Link>
                 </Container>
+
+                {/* <Link to={"/instruct/tutorial/topic"}>
+                    Upload new chapter
+                  </Link> */}
               </Form>
             </CardBody>
           </Card>
