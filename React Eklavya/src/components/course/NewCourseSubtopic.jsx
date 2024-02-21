@@ -226,12 +226,16 @@ function NewCourseSubtopic() {
                 </FormGroup>
 
                 <Container className="text-center">
+                <Link to="/instruct/videoup">
                   <Button type="submit" color="success">
                     Submit
                   </Button>
-                  <span className="">
+                </Link>
+
+                  
+                  {/* <span className="">
                     <Link to="/instruct/tutorial/topic">Add chapter</Link>
-                  </span>
+                  </span> */}
                 </Container>
               </Form>
             </CardBody>
