@@ -19,6 +19,10 @@ import {
 } from "../constants/userConstants";
 import { cartCntr, reset } from "./cartAction";
 
+
+
+
+
 export const login = (userName, pass) => async (dispatch) => {
   try {
     dispatch({
@@ -77,6 +81,17 @@ export const login = (userName, pass) => async (dispatch) => {
   }
 };
 
+
+
+
+
+
+
+
+
+
+
+
 export const logout = () => (dispatch) => {
   localStorage.removeItem("userInfo");
   localStorage.removeItem("userRoleId");
@@ -119,7 +134,7 @@ export const register =
         payload: data,
       });
 
-      alert("Username Registered Successfully.", data);
+     // alert("Username Registered Successfully.", data);
       localStorage.setItem("userInfo", JSON.stringify(data));
     } catch (error) {
       dispatch({
@@ -131,6 +146,37 @@ export const register =
       });
     }
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export const addcourse =
   (
