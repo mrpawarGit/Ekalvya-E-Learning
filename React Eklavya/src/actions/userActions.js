@@ -47,7 +47,7 @@ export const login = (userName, pass) => async (dispatch) => {
     });
 
     if (data === "") {
-      alert("please enter valid credentials");
+      //alert("please enter valid credentials");
     }
     localStorage.setItem("userInfo", JSON.stringify(data));
 
@@ -216,9 +216,9 @@ export const addcourse =
         config
       );
       if (data) {
-        alert(data);
+        //alert(data);
       } else {
-        alert("Please try again");
+      //  alert("Please try again");
       }
 
       dispatch({
@@ -272,9 +272,9 @@ export const addchapter =
         config
       );
       if (data) {
-        alert(data);
+       // alert(data);
       } else {
-        alert("Please try again");
+        //alert("Please try again");
       }
 
       dispatch({
@@ -330,9 +330,9 @@ export const addsubtopic =
         config
       );
       if (data) {
-        alert(data);
+        //alert(data);
       } else {
-        alert("Please try again");
+        //alert("Please try again");
       }
 
       dispatch({
