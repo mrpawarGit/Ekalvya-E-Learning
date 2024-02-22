@@ -17,13 +17,17 @@ import org.springframework.web.multipart.MultipartFile;
 import com.backend.elearning.fileupload.FileResponce;
 import com.backend.elearning.models.Course;
 import com.backend.elearning.models.SubTopic;
+import com.backend.elearning.models.SubTopicData;
 import com.backend.elearning.models.Chapter;
 import com.backend.elearning.models.User;
 import com.backend.elearning.services.FileService;
+import com.backend.elearning.services.InstructorService;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/elearning")
@@ -31,6 +35,8 @@ public class FileController {
 
     @Autowired
     private FileService fileService;
+    @Autowired
+	private InstructorService instructorService;
 
     @Value("${project.image}")
     private String imagePath; // getting file path from properties where image will store
@@ -54,6 +60,49 @@ public class FileController {
             return new ResponseEntity<>(new FileResponce(null, "Failed to upload image"), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+    
+    @PostMapping("/subtdata/{sId}")
+	public List<SubTopicData> getSubtsInCourseBySID(@PathVariable Long sId) {
+
+		List<SubTopicData> stopicList = new ArrayList<SubTopicData>();
+
+		//List<SubTopic> cl = studentService.getAllSubtListByChaptId(sId);
+		
+		 List<String> stList = instructorService.getSubtopicListByCourseID(sId);
+
+		for (String sbt : stList) {
+		
+			SubTopicData stdata = new SubTopicData();
+		
+
+			// split
+			String[] arrOfStr = sbt.split(",");
+			String id = arrOfStr[0];
+			String tit = arrOfStr[1];
+			// String indno = arrOfStr[2];
+
+			stdata.setSubtId(Long.parseLong(id));
+			stdata.setSubtTitle(tit);
+		//stdata.setSubtIndexNo(indno);
+		//stdata.setSubtId(sbt.getSubtId());
+		//stdata.setSubtId(sbt.getSubtId());
+		
+		//System.out.println(sbt.getSubtTitle());
+		//	stopicList.add(stopicList );
+			stopicList.add(stdata);
+		
+		}
+//		for (String subt : cl) {
+//
+//			SubTopicData cd = new SubTopicData();
+//
+//			cd.setSubtId(subt.getSubtId());
+//			cd.setSubtTitle(subt.getSubtTitle());
+//			cList.add(cd);
+//			
+//		}
+		return stopicList;
+}
 
  // download image
  	@GetMapping(value = "/download/{imageName}", produces = MediaType.MULTIPART_FORM_DATA_VALUE)
