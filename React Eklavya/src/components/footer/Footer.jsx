@@ -12,7 +12,7 @@ const Footer = () => {
               <h5>Eklavya Business</h5>
               {/* Use Link component instead of <a> to navigate to a new page */}
               <ul className="list-unstyled">
-                <li><Link to="/teach">Teach on Eklavya</Link></li>
+                {/* <li><Link to="/teach">Teach on Eklavya</Link></li> */}
                 <li>Get the app</li>
                 <li>About us</li>
                 <li>Contact us</li>
