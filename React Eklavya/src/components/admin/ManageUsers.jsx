@@ -8,7 +8,7 @@ function ManageUsers() {
   const [deleteMessage, setDeleteMessage] = useState("");
 
   const { id } = useParams();
-
+  
   const loadUsers = async () => {
     try {
       const config = {
@@ -18,7 +18,8 @@ function ManageUsers() {
       };
       //destructuring original => res.data
       const { data } = await axios.get(
-        "http://localhost:9090/api/elearning/admin/users",
+        // "http://localhost:9090/api/elearning/admin/users",
+        "https://localhost:7123/api/elearning/admin/users",
 
         config
       );
@@ -35,8 +36,10 @@ function ManageUsers() {
   }, []);
 
   const deleteUser = async (userId) => {
+    console.log(userId);
     const { data } = await axios.delete(
-      `http://localhost:9090/api/elearning/admin/deleteuser/${userId}`
+     // `http://localhost:9090/api/elearning/admin/deleteuser/${userId}`
+       `http://localhost:7123/api/elearning/admin/users/${userId}`
     );
     setDeleteMessage(data);
     alert(deleteMessage);
