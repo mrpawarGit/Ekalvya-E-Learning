@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EklavyaDotNet")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0e456df759976ff55cf129f164cc9fa702947dd8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("EklavyaDotNet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EklavyaDotNet")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
