@@ -53,7 +53,7 @@ function Carousel() {
           </div>
           <div class="carousel-item" data-bs-interval="400">
             <img
-              src={require("../../assets/5.jpg")}
+              src={require("../../assets/6.jpg")}
               class="d-block w-100"
               alt="..."
             />
