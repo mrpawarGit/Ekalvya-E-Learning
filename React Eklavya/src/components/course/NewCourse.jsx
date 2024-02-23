@@ -202,10 +202,12 @@ function NewCourse() {
                 </FormGroup> */}
 
                 <Container className="text-center">
+                {/* <Link to={"/instruct/tutorial/topic"}> */}
+                  {/* </Link> */}
                   <Button type="submit" color="success">
                     Submit
                   </Button>
-
+                  
                   <Link to={"/instruct/tutorial/topic"}>
                     Upload new chapter
                   </Link>
