@@ -57,9 +57,9 @@ body{
 }
 
 .team .row .card .image img{
-  height:10rem;
-  width:10rem;
-  border-radius: 50%;
+  height:12rem;
+  width:8rem;
+  border-radius: 1%;
   border:.5rem solid #fff;
   box-shadow: 0 0 .5rem rgba(0,0,0,.3);
   object-fit: cover;
