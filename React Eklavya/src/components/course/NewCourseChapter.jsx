@@ -81,6 +81,7 @@ function NewCourseChapter() {
     console.log("selected:", selectedCourse);
   }, [selectedCourse]);
 
+  const navigate = useNavigate();
   const submitHandler = (e) => {
     e.preventDefault();
     console.log("course id:", selectedCourse.value);
@@ -101,6 +102,7 @@ function NewCourseChapter() {
     setChapterIndexNo("");
     setChapterDesc("");
     setChapterTitle("");
+     navigate("/instruct/tutorial/subtopic");
 
     //on submit sucessfull redirec to next form to NewCourseTopic get course details
   };
@@ -223,9 +225,9 @@ function NewCourseChapter() {
                 <Button type="submit" color="success">
                     Submit
                   </Button>
-                <Link to={"/instruct/tutorial/subtopic"}>
+                {/* <Link to={"/instruct/tutorial/subtopic"}>
                   Next
-                  </Link>
+                  </Link> */}
               </Form>
             </CardBody>
           </Card>

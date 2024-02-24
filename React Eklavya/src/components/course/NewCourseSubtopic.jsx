@@ -122,7 +122,7 @@ function NewCourseSubtopic() {
 
     getChaptersList();
   }, [selectedCourse]);
-
+  const navigate =useNavigate();
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -148,6 +148,8 @@ function NewCourseSubtopic() {
     setSelectedCourse("");
     setSelectedChapter("");
     setChaptersList("");
+
+    navigate("/instruct/videoup");
     //on submit sucessfull redirec to next form to NewCourseTopic get course details
   };
 
@@ -230,9 +232,9 @@ function NewCourseSubtopic() {
                     Submit
                   </Button>
 
-                <Link to="/instruct/videoup"> 
+                {/* <Link to="/instruct/videoup"> 
                   Next
-                 </Link>
+                 </Link> */}
                   {/* <span className="">
                     <Link to="/instruct/tutorial/topic">Add chapter</Link>
                   </span> */}

@@ -368,6 +368,7 @@ function VideoUpload() {
         setSelectedCourse("");
         setSelectedChapter("");
         setSelectedSubtopic("");
+        
 
         // setMnfId(data);
         // console.log(mnfId);
