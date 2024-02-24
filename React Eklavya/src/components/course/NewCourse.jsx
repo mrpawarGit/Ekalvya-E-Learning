@@ -2,7 +2,9 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import Select from "react-select";
+
 import {
   Button,
   Card,
@@ -70,6 +72,8 @@ function NewCourse() {
     getSegIdBySegName();
   }, [userInfo]);
 
+  
+  const navigate = useNavigate();
   const submitHandler = (e) => {
     e.preventDefault();
     const courseThumbPath = "";
@@ -95,9 +99,15 @@ function NewCourse() {
     setCoursePrice("");
     setCourseTitle("");
     setCourseType("");
+    navigate("/instruct/tutorial/topic");
 
     // setMessage("User Register Successfully");
   };
+
+  // function handleClick() {
+  //   const navigate = useNavigate();
+  //   navigate("/instruct/tutorial/topic");
+  // }
 
   return (
     <Container className="mt-5">
@@ -208,9 +218,9 @@ function NewCourse() {
                     Submit
                   </Button>
                   
-                  <Link to={"/instruct/tutorial/topic"}>
+                  {/* <Link to={"/instruct/tutorial/topic"}>
                     Upload new chapter
-                  </Link>
+                  </Link> */}
                 </Container>
               </Form>
             </CardBody>

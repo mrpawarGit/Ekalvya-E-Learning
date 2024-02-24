@@ -147,7 +147,7 @@ function RegisterScreen() {
   return (
     
     <Container className="my-5">
-      <input type="text" name="text"/>
+      
       <Row className="pt-5">
         <Col sm={{ size: 6, offset: 3 }}>
           <Card color="dark" outline>
