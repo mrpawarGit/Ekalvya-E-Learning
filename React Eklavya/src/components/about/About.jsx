@@ -13,10 +13,10 @@ function About() {
 
 <div class="card">
   <div class="image">
-    {/* <img src={require("../about/Amar.jpg")}/> */}
+    <img src={require("../about/sush.jpg")}/> 
   </div>
   <div class="info">
-    <h4> </h4>
+    <h4>Sushant</h4>
     <h4>Full Stack-Web Developer</h4>
    
   </div>
@@ -24,10 +24,10 @@ function About() {
 
 <div class="card">
   <div class="image">
-    {/* <img  src={require("../about/Shiv.jpg")}/> */}
+    <img  src={require("../about/pranav.jpg")}/>
   </div>
   <div class="info">
-    <h4> </h4>
+    <h4>Pranav</h4>
     <h4>Full Stack-Web Developer</h4>
     
   </div>
@@ -35,34 +35,34 @@ function About() {
 
 <div class="card">
   <div class="image">
-    {/* <img src={require("../about/Ashlekh[1].jpg")} alt=""/> */}
+    <img src={require("../about/ashu.jpg")} />
   </div>
   <div class="info">
-    <h4> </h4>
+    <h4>Ashish</h4>
     <h4>Full Stack-Web Developer</h4>
     
   </div>
 </div>
-{/* <div class="card">
+<div class="card">
   <div class="image">
-    <img src={require("../about/recent.jpg")} alt=""/>
+    <img src={require("../about/mayur.jpg")} alt=""/>
   </div>
   <div class="info">
-    <h4> </h4>
+    <h4>Mayur</h4>
     <h4>Full stack-Web Developer</h4>
     
   </div>
-</div> */}
-{/* <div class="card">
+</div>
+<div class="card">
   <div class="image">
-    <img src={require("../about/sandeep.jpeg")} alt=""/>
+    <img src={require("../about/vijay.jpg")} alt=""/>
   </div>
   <div class="info">
-    <h4></h4>
-    <h4></h4>
+    <h4>Vijay</h4>
+    <h4>Full stack-Web Developer</h4>
     
   </div>
-</div> */}
+</div>
 </div>
 </section>
 
