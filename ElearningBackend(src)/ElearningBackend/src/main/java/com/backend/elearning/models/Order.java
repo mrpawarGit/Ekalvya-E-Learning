@@ -4,9 +4,11 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -26,9 +28,17 @@ public class Order {
 
 	@Column(name = "ord_date")
 	private String ordDate;
+	
+	
 
 	@ManyToOne
 	private User user;
+	
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "courseId")
+    private Course course;
+	
+	
 
 	public Order() {
 		super();
@@ -41,28 +51,30 @@ public class Order {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Order(Integer ord_id, String username, Float totalAmt, String ordDate, User user) {
+	public Order(Integer ord_id, String username, Float totalAmt, String ordDate,  User user, Course course) {
 		super();
 		this.ord_id = ord_id;
 		this.username = username;
 		this.totalAmt = totalAmt;
 		this.ordDate = ordDate;
+		
 		this.user = user;
+		this.course = course;
 	}
 
-	public Integer getOrdId() {
+	public Integer getOrd_id() {
 		return ord_id;
 	}
 
-	public void setOrdId(Integer ord_id) {
+	public void setOrd_id(Integer ord_id) {
 		this.ord_id = ord_id;
 	}
 
-	public String getUserName() {
+	public String getUsername() {
 		return username;
 	}
 
-	public void setUserName(String username) {
+	public void setUsername(String username) {
 		this.username = username;
 	}
 
@@ -82,6 +94,8 @@ public class Order {
 		this.ordDate = ordDate;
 	}
 
+
+
 	public User getUser() {
 		return user;
 	}
@@ -89,6 +103,22 @@ public class Order {
 	public void setUser(User user) {
 		this.user = user;
 	}
+
+	public Course getCourse() {
+		return course;
+	}
+
+	public void setCourse(Course course) {
+		this.course = course;
+	}
+
+	@Override
+	public String toString() {
+		return "Order [ord_id=" + ord_id + ", username=" + username + ", totalAmt=" + totalAmt + ", ordDate=" + ordDate
+				+  ", user=" + user + ", course=" + course + "]";
+	}
+
+
 }
 
 

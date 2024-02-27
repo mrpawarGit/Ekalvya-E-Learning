@@ -37,15 +37,13 @@ function InstructorDashboard() {
         config
       );
 
+
       setAproveStatus(d.data);
 
-      //total earn
-      const earn = await axios.get(
-        `http://localhost:9090/api/elearning/revenue/${uid}`,
-        config
-      );
 
-      setTotalEarn(earn.data);
+
+
+      
 
       console.log(d);
 
@@ -54,7 +52,31 @@ function InstructorDashboard() {
       console.log(error);
     }
   };
+
   getIdByName();
+
+  const getEarning = async () => {
+    //total earn
+    const config = {
+      headers: {
+        "Content-type": "application/json",
+      },
+    };
+    const { data } = await axios.get(
+      `http://localhost:9090/getTotalPrice/${uid}`,
+      config
+    );
+
+    setTotalEarn(data);
+  }
+  getEarning() ;
+
+
+
+
+
+
+
 
   //get total course count
   const getCrCount = async () => {
@@ -72,12 +94,11 @@ function InstructorDashboard() {
       setCoursesCnt(data);
 
       //total earn
-      const earn = await axios.get(
-        `http://localhost:9090/api/elearning/revenue/${uid}`,
-        config
-      );
+      // const earn = await axios.get(
+      //   `http://localhost:9090/api/elearning/revenue/${uid}`,
+      //   config
+      // );
 
-      setTotalEarn(earn.data);
     } catch (error) {
       console.log(error);
     }
