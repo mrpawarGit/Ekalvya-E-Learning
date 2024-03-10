@@ -11,7 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
 @Entity
 @Table(name = "orders")
 public class Order {
@@ -28,17 +27,14 @@ public class Order {
 
 	@Column(name = "ord_date")
 	private String ordDate;
-	
-	
 
 	@ManyToOne
 	private User user;
 	
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "courseId")
-    private Course course;
-	
-	
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "course_id")
+	private Course course;
 
 	public Order() {
 		super();
@@ -51,17 +47,17 @@ public class Order {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Order(Integer ord_id, String username, Float totalAmt, String ordDate,  User user, Course course) {
+	public Order(Integer ord_id,Course course, String username, Float totalAmt, String ordDate, User user) {
 		super();
 		this.ord_id = ord_id;
 		this.username = username;
 		this.totalAmt = totalAmt;
 		this.ordDate = ordDate;
-		
 		this.user = user;
-		this.course = course;
+		this.course=course;
 	}
-
+	
+	
 	public Integer getOrd_id() {
 		return ord_id;
 	}
@@ -75,6 +71,30 @@ public class Order {
 	}
 
 	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public Course getCourse() {
+		return course;
+	}
+
+	public void setCourse(Course course) {
+		this.course = course;
+	}
+
+	public Integer getOrdId() {
+		return ord_id;
+	}
+
+	public void setOrdId(Integer ord_id) {
+		this.ord_id = ord_id;
+	}
+
+	public String getUserName() {
+		return username;
+	}
+
+	public void setUserName(String username) {
 		this.username = username;
 	}
 
@@ -94,8 +114,6 @@ public class Order {
 		this.ordDate = ordDate;
 	}
 
-
-
 	public User getUser() {
 		return user;
 	}
@@ -103,22 +121,6 @@ public class Order {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
-	public Course getCourse() {
-		return course;
-	}
-
-	public void setCourse(Course course) {
-		this.course = course;
-	}
-
-	@Override
-	public String toString() {
-		return "Order [ord_id=" + ord_id + ", username=" + username + ", totalAmt=" + totalAmt + ", ordDate=" + ordDate
-				+  ", user=" + user + ", course=" + course + "]";
-	}
-
-
 }
 
 

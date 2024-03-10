@@ -87,7 +87,7 @@ public class PlaceOrder {
 		Order or = new Order();
 
 		or.setTotalAmt(total);
-		or.setUsername(userName);
+		or.setUserName(userName);
 //		Long uid = Long.parseLong(userId);
 		User uss = new User();
 		uss.setUserId(Long.parseLong(userId));

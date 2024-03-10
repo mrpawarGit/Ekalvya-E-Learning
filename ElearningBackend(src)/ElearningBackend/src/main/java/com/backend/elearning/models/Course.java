@@ -44,47 +44,21 @@ public class Course {
 	@Column(name = "intro_video_path")
 	private String introVideoPath;
 
+	@OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
+    private List<Order> orders;
+	
+	public List<Order> getOrders() {
+		return orders;
+	}
+
+	public void setOrders(List<Order> orders) {
+		this.orders = orders;
+	}
+
 	//@JsonIgnore
 	@ManyToOne
 	private User user; //many courses blong to single user(userId)
 	
-	
-
-	    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL)
-	    private List<Order> orders;
-	
-	
-	    
-	    
-	    
-	
-	@Override
-		public String toString() {
-			return "Course [courseId=" + courseId + ", courseTitle=" + courseTitle + ", courseDesc=" + courseDesc
-					+ ", courseType=" + courseType + ", coursePrice=" + coursePrice + ", courseThumbPath="
-					+ courseThumbPath + ", introVideoPath=" + introVideoPath + ", user=" + user + ", orders=" + orders
-					+ ", courseCategory=" + courseCategory + ", chapters=" + chapters + ", subtopics=" + subtopics
-					+ "]";
-		}
-
-	public Course(Long courseId, String courseTitle, String courseDesc, String courseType, Float coursePrice,
-				String courseThumbPath, String introVideoPath, User user, List<Order> orders,
-				CourseCategory courseCategory, List<Chapter> chapters, List<SubTopic> subtopics) {
-			super();
-			this.courseId = courseId;
-			this.courseTitle = courseTitle;
-			this.courseDesc = courseDesc;
-			this.courseType = courseType;
-			this.coursePrice = coursePrice;
-			this.courseThumbPath = courseThumbPath;
-			this.introVideoPath = introVideoPath;
-			this.user = user;
-			this.orders = orders;
-			this.courseCategory = courseCategory;
-			this.chapters = chapters;
-			this.subtopics = subtopics;
-		}
-
 	//@JsonIgnore
 	@ManyToOne
 	private CourseCategory courseCategory;
@@ -106,6 +80,24 @@ public class Course {
 		super();
 		this.courseId=l;
 		// TODO Auto-generated constructor stub
+	}
+
+	public Course(Long courseId, String courseTitle, String courseDesc, String courseType, Float coursePrice,
+			String courseThumbPath, String introVideoPath, List<Order> orders,User user, CourseCategory courseCategory, List<Chapter> chapters,
+			List<SubTopic> subtopics) {
+		super();
+		this.courseId = courseId;
+		this.courseTitle = courseTitle;
+		this.courseDesc = courseDesc;
+		this.courseType = courseType;
+		this.coursePrice = coursePrice;
+		this.courseThumbPath = courseThumbPath;
+		this.introVideoPath = introVideoPath;
+		this.user = user;
+		this.courseCategory = courseCategory;
+		this.chapters = chapters;
+		this.subtopics = subtopics;
+		this.orders=orders;
 	}
 
 	public Long getCourseId() {
@@ -172,14 +164,6 @@ public class Course {
 		this.user = user;
 	}
 
-	public List<Order> getOrders() {
-		return orders;
-	}
-
-	public void setOrders(List<Order> orders) {
-		this.orders = orders;
-	}
-
 	public CourseCategory getCourseCategory() {
 		return courseCategory;
 	}
@@ -188,20 +172,26 @@ public class Course {
 		this.courseCategory = courseCategory;
 	}
 
-	public List<Chapter> getChapters() {
+	public List<Chapter> getTopics() {
 		return chapters;
 	}
 
-	public void setChapters(List<Chapter> chapters) {
+	public void setTopics(List<Chapter> chapters) {
 		this.chapters = chapters;
 	}
 
 	public List<SubTopic> getSubtopics() {
 		return subtopics;
 	}
-
 	public void setSubtopics(List<SubTopic> subtopics) {
 		this.subtopics = subtopics;
 	}
 
+	@Override
+	public String toString() {
+		return "Course [courseId=" + courseId + ", courseTitle=" + courseTitle + ", courseDesc=" + courseDesc
+				+ ", courseType=" + courseType + ", coursePrice=" + coursePrice + ", courseThumbPath=" + courseThumbPath
+				+ ", introVideoPath=" + introVideoPath + ", user=" + user + ", courseCategory=" + courseCategory
+				+ ", chapters =" + chapters + ", subtopics=" + subtopics + "]";
+	}
 }

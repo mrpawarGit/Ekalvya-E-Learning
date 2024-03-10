@@ -119,11 +119,11 @@ public class AuthController {
 //		return userList;
 //	}
 	
-//	@DeleteMapping("admin/deleteuser/{id}")
-//	public String deleteUser(@PathVariable Long id) {
-//		registerService.deleteUserByID(id);
-//		return "User with id " + id + " has been deleted successfully.";
-//	}
+	@DeleteMapping("admin/deleteuser/{id}")
+	public String deleteUser(@PathVariable Long id) {
+		registerService.deleteUserByID(id);
+		return "User with id " + id + " has been deleted successfully.";
+	}
 	
 	@GetMapping("/admin/inctruct/count")
 	public String getTotalInstrutors() {

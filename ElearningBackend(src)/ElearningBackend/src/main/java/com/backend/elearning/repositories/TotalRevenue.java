@@ -9,8 +9,9 @@ import com.backend.elearning.models.Order;
 
 
 @Repository
+
 public interface TotalRevenue extends JpaRepository<Order, Integer> {
-    
+
     @Query("SELECT SUM(o.totalAmt) FROM Order o WHERE o.course.user.userId = :userId")
     Double getTotalPriceByUserId(@Param("userId") Long userId);
 }

@@ -24,8 +24,8 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 @Data
-@NoArgsConstructor
-@RequiredArgsConstructor
+//@NoArgsConstructor
+//@RequiredArgsConstructor
 @Entity
 @Table(name = "users")
 public class User {
@@ -70,10 +70,6 @@ public class User {
 	@OneToMany(mappedBy = "user")
 	private List<Order> orders;
 	
-	@OneToMany(mappedBy = "course")
-	private List<Order> o;
-	
-	
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -100,106 +96,6 @@ public class User {
 		this.role = role;
 		Courses = courses;
 	}
-		
-	
-	
-	
-	
-	
-	
-	
-	
-//	public Long getUserId() {
-//		return userId;
-//	}
-//
-//	public void setUserId(Long userId) {
-//		this.userId = userId;
-//	}
-//
-//	public String getUserName() {
-//		return userName;
-//	}
-//
-//	public void setUserName(String userName) {
-//		this.userName = userName;
-//	}
-//
-//	public String getFirstName() {
-//		return firstName;
-//	}
-//
-//	public void setFirstName(String firstName) {
-//		this.firstName = firstName;
-//	}
-//
-//	public String getLastName() {
-//		return lastName;
-//	}
-//
-//	public void setLastName(String lastName) {
-//		this.lastName = lastName;
-//	}
-//
-//	public String getEmail() {
-//		return email;
-//	}
-//
-//	public void setEmail(String email) {
-//		this.email = email;
-//	}
-//
-//	public String getPass() {
-//		return pass;
-//	}
-//
-//	public void setPass(String pass) {
-//		this.pass = pass;
-//	}
-//
-//	public String getPhoneNo() {
-//		return phoneNo;
-//	}
-//
-//	public void setPhoneNo(String phoneNo) {
-//		this.phoneNo = phoneNo;
-//	}
-//
-//	public String getAddress() {
-//		return address;
-//	}
-//
-//	public void setAddress(String address) {
-//		this.address = address;
-//	}
-//
-//	public Role getCategory() {
-//		return role;
-//	}
-//
-//	public void setCategory(Role role) {
-//		this.role = role;
-//	}
-//
-//
-//	public List<Course> getCourses() {
-//		return Courses;
-//	}
-//
-//
-//	public void setCourses(List<Course> courses) {
-//		Courses = courses;
-//	}
-//
-//	public List<Order> getOrders() {
-//		return orders;
-//	}
-//
-//
-//	public void setOrders(List<Order> orders) {
-//		this.orders = orders;
-//	}
-
 
 	public Long getUserId() {
 		return userId;
@@ -265,17 +161,19 @@ public class User {
 		this.address = address;
 	}
 
-	public Role getRole() {
+	public Role getCategory() {
 		return role;
 	}
 
-	public void setRole(Role role) {
+	public void setCategory(Role role) {
 		this.role = role;
 	}
+
 
 	public List<Course> getCourses() {
 		return Courses;
 	}
+
 
 	public void setCourses(List<Course> courses) {
 		Courses = courses;
@@ -285,23 +183,17 @@ public class User {
 		return orders;
 	}
 
+
 	public void setOrders(List<Order> orders) {
 		this.orders = orders;
 	}
 
-	public List<Order> getO() {
-		return o;
-	}
-
-	public void setO(List<Order> o) {
-		this.o = o;
-	}
 
 	@Override
 	public String toString() {
 		return "User [userId=" + userId + ", userName=" + userName + ", firstName=" + firstName + ", lastName="
 				+ lastName + ", email=" + email + ", pass=" + pass + ", phoneNo=" + phoneNo + ", address=" + address
-				+ ", category=" + role + "]";
+				+ ", role=" + role + "]";
 	}
 
 	

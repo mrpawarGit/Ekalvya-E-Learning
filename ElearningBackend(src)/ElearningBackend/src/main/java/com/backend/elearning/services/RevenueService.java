@@ -7,11 +7,13 @@ import org.springframework.stereotype.Service;
 import com.backend.elearning.repositories.TotalRevenue;
 
 
+
 @Service
 public class RevenueService {
+
     @Autowired
     TotalRevenue orderRepository;
-    
+
     public Double getTotalPriceByUserId(Long userId) {
         return orderRepository.getTotalPriceByUserId(userId);
     }

@@ -105,14 +105,14 @@ public class FileController {
 }
 
  // download image
- 	@GetMapping(value = "/download/{imageName}", produces = MediaType.MULTIPART_FORM_DATA_VALUE)
- 	public void downloadImage(@PathVariable("imageName") String imageName, HttpServletResponse response)
- 			throws IOException {
- 		System.out.println("in download file");
- 		InputStream resource = fileService.getResources(imagePath, imageName);
- 		response.setContentType(MediaType.MULTIPART_FORM_DATA_VALUE);
-
- 		StreamUtils.copy(resource, response.getOutputStream());
- 	}
+// 	@GetMapping(value = "/download/{imageName}", produces = MediaType.MULTIPART_FORM_DATA_VALUE)
+// 	public void downloadImage(@PathVariable("imageName") String imageName, HttpServletResponse response)
+// 			throws IOException {
+// 		System.out.println("in download file");
+// 		InputStream resource = fileService.getResources(imagePath, imageName);
+// 		response.setContentType(MediaType.MULTIPART_FORM_DATA_VALUE);
+//
+// 		StreamUtils.copy(resource, response.getOutputStream());
+// 	}
 }
 

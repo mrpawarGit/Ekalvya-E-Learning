@@ -11,11 +11,12 @@ import com.backend.elearning.repositories.TotalRevenue;
 import com.backend.elearning.services.RevenueService;
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
+
 public class OrderController {
-    
+
     @Autowired
-    TotalRevenue orderService;
-    
+    RevenueService orderService;
+
     @GetMapping("/getTotalPrice/{userId}")
     public ResponseEntity<Double> getTotalPriceByUserId(@PathVariable("userId") Long userId) {
         Double totalPrice = orderService.getTotalPriceByUserId(userId);
